@@ -14,6 +14,18 @@ describe('Compiler', ()=>{
       container,
       attrDirectiveAnnotations;
 
+  iit('should', function() {
+    class Foo {
+      bar(a: string, b = null) {
+        console.log(a, b);
+      }
+    }
+
+    var f = new Foo();
+    f.bar('aaa')
+    f.bar(1)
+  });
+
   it('should not reparent nodes', inject(Compiler, (compiler)=>{
     createSelector();
     var container = $('<div>a</div>')[0];
