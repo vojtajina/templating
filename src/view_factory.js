@@ -1,7 +1,7 @@
 import {NodeAttrs} from './types';
 import {NodeContainer} from './node_container';
 import {DirectiveClass, ArrayOfDirectiveClass} from './directive_class';
-import {assert} from 'assert';
+import {assert} from 'rtts-assert';
 import {TemplateDirective, ComponentDirective, DecoratorDirective, Directive} from './annotations';
 import {Injector} from 'di';
 import {Inject, Provide} from 'di';
