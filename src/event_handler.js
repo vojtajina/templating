@@ -1,5 +1,7 @@
 import {Inject} from 'di';
 
+// TODO(vojta): can we use value (without a fn wrapper) ?
+@Inject
 export function ChangeEventConfig() {
   return [
     {nodeName: 'input', events: ['input', 'keypress', 'change'], properties: ()=>['value', 'valueAsDate', 'valueAsNumber']},
