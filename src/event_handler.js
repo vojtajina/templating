@@ -1,15 +1,11 @@
 import {Inject} from 'di';
 
-// TODO(vojta): can we use value (without a fn wrapper) ?
-@Inject
-export function ChangeEventConfig() {
-  return [
-    {nodeName: 'input', events: ['input', 'keypress', 'change'], properties: ()=>['value', 'valueAsDate', 'valueAsNumber']},
-    {nodeName: 'textarea', events: ['input', 'keypress', 'change'], properties: ()=>['value']},
-    {nodeName: 'select', events: ['change'], properties: ()=>['value']},
-    {nodeName: '*', events: ['propchange'], properties: (event) => event.properties}
-  ];
-}
+export var ChangeEventConfig = [
+  {nodeName: 'input', events: ['input', 'keypress', 'change'], properties: ()=>['value', 'valueAsDate', 'valueAsNumber']},
+  {nodeName: 'textarea', events: ['input', 'keypress', 'change'], properties: ()=>['value']},
+  {nodeName: 'select', events: ['change'], properties: ()=>['value']},
+  {nodeName: '*', events: ['propchange'], properties: (event) => event.properties}
+];
 
 export class EventHandler {
   @Inject(ChangeEventConfig)

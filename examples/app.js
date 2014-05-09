@@ -7,8 +7,8 @@ import {XTagsEventConfig} from './xtags_event_config';
 @Provide(ChangeEventConfig)
 export function AppChangeEventConfig() {
   var res = [];
-  res.push(...ChangeEventConfig());
-  res.push(...XTagsEventConfig());
+  res.push(...ChangeEventConfig);
+  res.push(...XTagsEventConfig);
   return res;
 }
 
